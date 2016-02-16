@@ -1,0 +1,26 @@
+<!-- Calculates pounds of nitrogen based fertilizer needed for bermuda lawns per:
+
+http://publications.tamu.edu/TURF_LANDSCAPE/PUB_turf_Maintaining%20Bermudagrass%20Lawns.pdf
+
+-->
+
+Fertilizer
+
+Nitrogen: <input type="input" id="txtN"><br/>
+SqFt: <input type="input" id="txtSqft"><br/>
+
+<input type="submit" value="submit" onclick="fnCalc(); return false;">
+
+<script>
+	function fnCalc()
+	{
+		var txtN=document.getElementById("txtN").value;    // Nitrogen input
+		var txtSqft=document.getElementById("txtSqft").value; // Square feet
+
+		var r1=100/txtN;
+
+		var r=(txtSqft / 1000) * r1;
+
+		alert("You need: "+r+" lbs of fertilizer"); 
+	}
+</script>
